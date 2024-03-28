@@ -7,16 +7,16 @@ namespace EmailSendingApp.EmailSenderService
     {
         public Task SendEmailAsync(string email, string subject, string message)
         {
-            var client = new SmtpClient("smtp-relay.brevo.com", 587)
+            var client = new SmtpClient("SMTP Server Link", 587)
             {
                 EnableSsl = true,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential("musmanch2004@gmail.com", "4Ga0AbVxrfIzEUcs")
+                Credentials = new NetworkCredential("Email of SMTP Server", "Password of SMTP Server")
             };
 
             return client.SendMailAsync(
                 new MailMessage(
-                    from: "musmanch2004@gmail.com",
+                    from: "Email",
                     to: email, 
                     subject,
                     message
